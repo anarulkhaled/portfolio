@@ -104,7 +104,7 @@ function waitAndResponce(inputText) {
             break;
 
         case "education":
-            sendTextMessage("I am currently pusuing BCA in CS from B.N College, Dhubri<br>Passing Year : 2023<br>I have completed my HS in Science from Apollo Academy, Hatsingimari <br> I have completed my Secondary school from local school Manik Sarkar High School<br>Passing Year:2016");
+            sendTextMessage("I am currently pusuing BCA in CS from B.N College, Dhubri<br><br>Passing Year : 2023<br><br><br>I have completed my HS in Science from Apollo Academy, Hatsingimari <br><br><br> I have completed my Secondary school from local school Manik Sarkar High School<br><br>Passing Year:2016");
             break;
 
         case "address":
