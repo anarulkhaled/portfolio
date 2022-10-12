@@ -9,7 +9,7 @@ var repliesForBye = ["Catch you on the flip side!", "Bye-bye, butterfly.", "See 
 var repliesfForLove = ["I get that a lot!", "You are day-dreaming again!💭", "I love You........Tube! LOL😂!", "Are you sure you aren't sick or something?😲", "Aw🥰, I love you too!", "You are not my type!", "❤️"]
 var repliesForCommandUnknown = ["Hey I couldn't catch you....<br>Send 'help' to know more about usage.", "I didn't get it.", "Please can you repeat it?", "I'm still learning...please use approriate keywords in your phrase.", "I'm still working on it.<br>"];
 var repliesForVoiceAssistants = ["Yes! I know her.", "Of-cource! Who don't know her?", "I'm teching lessions from her!", "She is my BFF!", "My childhood friend!"];
-var repliesForWhoIsYourGirlfriend = ["😉, I know you know! "];
+var repliesForGirlfriend = ["😉, I know you know! "];
 
 
 function getRandom(arrayOfReplies) {
@@ -151,9 +151,9 @@ function ifElseThinkAndExecute(textString) {
         // reply for 'you know other chattingBots' request
         sendTextMessage(getRandom(repliesForVoiceAssistants));
     }   
-        else if (textString.includes("your gf") && (textString.includes("your girlfriend") || textString.includes("your partner" || textString.includes("your love") || textString.includes("your lover")))) {
-        // reply for 'you know other chattingBots' request
-        sendTextMessage(repliesForWhoIsYourGirlfriend);
+        else if (textString.includes("your gf") || (textString.includes("your girlfriend") || textString.includes("your partner" || textString.includes("your love") || textString.includes("your lover")))) {
+        // reply for 'who is your girlfriend' request
+        sendTextMessage(repliesForGirlfriend);
     } else {
         setTimeout(() => {
             sendTextMessage(getRandom(repliesForCommandUnknown));
