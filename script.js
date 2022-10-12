@@ -6,7 +6,7 @@ var addressString = "<div class='mapview'><iframe src='' class='map'></iframe></
 var repliesfForHowAreYou = ["I'm fine.", "I'm good. And yourself?", "Not bad. How are you?", "I'm doing well, and you?", "Good, how about you?", "I'm great!", "Everything is fine when you are around.", "The best I can be. I hope you are at your best too.", "I'm still learning and eagerly waiting to grasp new things."];
 var repliesForHello = ["Hello there!", "Hey!", "Hola!", "Nice to meet you!", "I'm here!", "Hey! How's it going?", "What's up?", "Hey! What a pleasant surprise!"];
 var repliesForBye = ["Catch you on the flip side!", "Bye-bye, butterfly.", "See you soon!", "Catch you later!", "Bye for now", "See you on the internet!"];
-var repliesfForLove = ["I get that a lot!", "You are day-dreaming again!💭", "I love You........Tube! LOL😂!", "Are you sure you aren't sick or something?😲", "Aw🥰, I love you too!", "You are not my type!", "❤️"]
+var repliesfForLove = ["I get that a lot!", "You are day-dreaming again!💭", "I love You........Tube! LOL😂!", "Are you sure you aren't sick or something?😲", "Aw🥰, I love you too!", "You are not my type!😔", "❤️"]
 var repliesForCommandUnknown = ["Hey I couldn't catch you....<br>Send 'help' to know more about usage.", "I didn't get it.", "Please can you repeat it?", "I'm still learning...please use approriate keywords in your phrase.", "I'm still working on it.<br>"];
 var repliesForVoiceAssistants = ["Yes! I know her.", "Of-cource! Who don't know her?", "I'm teching lessions from her!", "She is my BFF!", "My childhood friend!"];
 var repliesForGirlfriend = ["😉, I know you know! "];
