@@ -6,9 +6,19 @@ var addressString = "<div class='mapview'><iframe src='' class='map'></iframe></
 var repliesfForHowAreYou = ["I'm fine.", "I'm good. And yourself?", "Not bad. How are you?", "I'm doing well, and you?", "Good, how about you?", "I'm great!", "Everything is fine when you are around.", "The best I can be. I hope you are at your best too.", "I'm still learning and eagerly waiting to grasp new things."];
 var repliesForHello = ["Hello there!", "Hey!", "Hola!", "Nice to meet you!", "I'm here!", "Hey! How's it going?", "What's up?", "Hey! What a pleasant surprise!"];
 var repliesForBye = ["Catch you on the flip side!", "Bye-bye, butterfly.", "See you soon!", "Catch you later!", "Bye for now", "See you on the internet!"];
-var repliesfForLove = ["I get that a lot!", "You are day-dreaming again!", "I love You........Tube! LOL!", "Are you sure you aren't sick or something?", "I love you too!", "You are not my type!", "❤️"]
+var repliesfForLove = ["I get that a lot!", "You are day-dreaming again!", "I love You........Tube! LOL!", "Are you sure you aren't sick or something?", "I love you too!", "You are not my type!", "❤️"]
 var repliesForCommandUnknown = ["Hey I couldn't catch you....<br>Send 'help' to know more about usage.", "I didn't get it.", "Please can you repeat it?", "I'm still learning...please use approriate keywords in your phrase.", "I'm still working on it.<br>"];
 var repliesForVoiceAssistants = ["Yes! I know her.", "Of-cource! Who don't know her?", "I'm teching lessions from her!", "She is my BFF!", "My childhood friend!"];
+
+
+
+function getRandom(arrayOfReplies) {
+    var sizeOfArray = arrayOfReplies.length;
+    return arrayOfReplies[Math.floor(Math.random() * sizeOfArray)];
+}
+
+
+
 
 function startFunction() {
     setLastSeen();
@@ -69,7 +79,7 @@ function sendMsg() {
     document.getElementById("listUL").appendChild(myLI);
     var s = document.getElementById("chatting");
     s.scrollTop = s.scrollHeight;
-    setTimeout(function() { waitAndResponce(ti) }, 1500);
+    setTimeout(function () { waitAndResponce(ti) }, 1500);
     input.value = "";
     playSound();
 }
@@ -80,7 +90,7 @@ function waitAndResponce(inputText) {
     switch (inputText.toLowerCase().trim()) {
         case "intro":
             setTimeout(() => {
-                sendTextMessage("Hello there 👋🏻,<br><br>My name is <span class='bold'><a class='alink'>Anarul Islam</a>.</span><br><br>I am a Computer Science student at <span class='bold'>B.N College, Dhubri 👨🏻‍💻📚</span><br><br>I am eager to hear about potential career opportunities, so I would be pleased to chat about job openings in the engineering sphere.<br><br>Send <span class='bold'>'help'</span> to know more about me.<br>");
+                sendTextMessage("Hello there 👋🏻,<br><br>My name is <span class='bold'><a class='alink'>Anarul Islam</a>.</span><br><br>I am a CS student at <span class='bold'>B.N College, Dhubri 👨🏻‍💻📚</span><br><br>I am eager to hear about potential career opportunities, so I would be pleased to chat about job openings in the IT sphere.<br><br>Send <span class='bold'>'help'</span> to know more about me.<br>");
             }, 2000);
             break;
         case "help":
@@ -90,11 +100,11 @@ function waitAndResponce(inputText) {
             sendTextMessage(resumeString);
             break;
         case "skills":
-            sendTextMessage("<span class='sk'>I am currently pursuing BCA degree at B.N College, Dhubri.<br><br>I can comfortably write code in following languages :<br><span class='bold'>Java<br>C++<br>C<br>PHP<br>Python<br>CSS<br>HTML</span><br><br>I've experiance with following frameworks :<span class='bold'><br>Android<br>Flutter<br>ReactJs<br>Favourite IDE:VSCode</span>");
+            sendTextMessage("<span class='sk'>I am currently pusuing BCA in CS.<br><br>I can comfortably write code in following languages :<br><span class='bold'>Java<br>C++<br>C<br>PHP<br>Python<br>CSS<br>HTML</span><br><br>My Favourite IDE:VSCode</span>");
             break;
 
         case "education":
-            sendTextMessage("I am currently pusuing BCA degree at B.N College, Dhubri<br>Passing Year : 2023<br><br>I have completed my HS in Science from Apollo Academy, Hatsingimari<br>Passing Year:2018<br><br>I have completed my Secondary school from  Manik Sarkar High School<br>Passing Year:2016");
+            sendTextMessage("I am currently pusuing BCA in CS from B.N College, Dhubri<br>Passing Year : 2023<br>I have completed my HS in Science from Apollo Academy, Hatsingimari <br> I have completed my Secondary school from local school Manik Sarkar High School<br>Passing Year:2016");
             break;
 
         case "address":
@@ -112,12 +122,17 @@ function waitAndResponce(inputText) {
         case "projects":
             sendTextMessage("You want to check my projects? Then just jump into my Github Account.<br><br><div class='social'><a target='_blank' href='https://github.com/anarulkhaled'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a></div>");
             break;
-        default:
+        case "new":
+            sendTextMessage(addressString);
+            break;
+            default:
                 ifElseThinkAndExecute(inputText.toLowerCase().trim());
                 break;
     }
 
 }
+
+
 
 function ifElseThinkAndExecute(textString) {
     if (textString.includes("hii") || textString.includes("hi") || textString.includes("hello") || textString.includes("hola") || textString.includes("hey")) {
@@ -141,7 +156,6 @@ function ifElseThinkAndExecute(textString) {
         }, 2000);
     }
 }
-
 
 function clearChat() {
     document.getElementById("listUL").innerHTML = "";
