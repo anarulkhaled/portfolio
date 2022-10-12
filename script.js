@@ -112,19 +112,36 @@ function waitAndResponce(inputText) {
         case "projects":
             sendTextMessage("You want to check my projects? Then just jump into my Github Account.<br><br><div class='social'><a target='_blank' href='https://github.com/anarulkhaled'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a></div>");
             break;
-        case "new":
-            sendTextMessage(addressString);
-            break;
         default:
-            setTimeout(() => {
-                sendTextMessage("Hey I couldn't catch you...😢<br>Send 'help' to know more about usage.");
-            }, 2000);
-            break;
+                ifElseThinkAndExecute(inputText.toLowerCase().trim());
+                break;
     }
 
-
-
 }
+
+function ifElseThinkAndExecute(textString) {
+    if (textString.includes("hii") || textString.includes("hi") || textString.includes("hello") || textString.includes("hola") || textString.includes("hey")) {
+        // reply for hi message
+        sendTextMessage(getRandom(repliesForHello));
+    } else if (textString.includes("i need break") || textString.includes("leave me") || textString.includes("bye") || textString.includes("see you soon") || textString.includes("bye bye") || textString.includes("goodbye")) {
+        // reply for bye message
+        sendTextMessage(getRandom(repliesForBye));
+    } else if (textString.includes("i love you") || textString.includes("love you") || textString.includes("you are hot") || textString.includes("i like you")) {
+        // reply for i love you
+        sendTextMessage(getRandom(repliesfForLove));
+    } else if (textString.includes("how are you") || (textString.includes("hows going") || textString.includes("how its going" || textString.includes("how it's going") || textString.includes("what are you doing")))) {
+        // reply for 'how are you' request
+        sendTextMessage(getRandom(repliesfForHowAreYou));
+    } else if (textString.includes("you know") && (textString.includes("bixby") || textString.includes("siri" || textString.includes("alexa") || textString.includes("cortana")))) {
+        // reply for 'you know other chattingBots' request
+        sendTextMessage(getRandom(repliesForVoiceAssistants));
+    } else {
+        setTimeout(() => {
+            sendTextMessage(getRandom(repliesForCommandUnknown));
+        }, 2000);
+    }
+}
+
 
 function clearChat() {
     document.getElementById("listUL").innerHTML = "";
